@@ -3,8 +3,8 @@
     "dev": "next dev",
     "build": "opennextjs-cloudflare build",
     "start": "next start",
-    "deploy": "opennextjs-cloudflare deploy",
-    "preview": "opennextjs-cloudflare preview"
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview"
   },
   "dependencies": {
     "@supabase/ssr": "latest",
@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "@opennextjs/cloudflare": "latest",
+    "wrangler": "latest",
     "typescript": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
