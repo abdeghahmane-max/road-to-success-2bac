@@ -5,8 +5,8 @@
     "start": "next start"
   },
   "dependencies": {
-    "@Supabase/ssr": "latest",
-    "@Supabase/supabase-js": "latest",
+    "@supabase/ssr": "latest",
+    "@supabase/supabase-js": "latest",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest"
