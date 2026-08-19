@@ -1,0 +1,5 @@
+ "use client";
+import {useState} from "react"; import {supabase} from "../../lib/supabase"; import {useRouter} from "next/navigation";
+export default function Login(){const [email,setEmail]=useState(""),[password,setPassword]=useState(""),[msg,setMsg]=useState("");const r=useRouter();
+async function go(){const {error}=await supabase().auth.signInWithPassword({email,password});if(error)setMsg(error.message);else r.push("/")}
+return <main className="center"><div className="login"><div className="logo">RTS</div><h1>Connexion</h1><p>Accède à ton espace Road to Success.</p><input placeholder="Email" value={email} onChange={e=>setEmail(e.target.value)}/><input placeholder="Mot de passe" type="password" value={password} onChange={e=>setPassword(e.target.value)}/><button onClick={go}>Se connecter</button>{msg&&<small>{msg}</small>}</div></main>}
